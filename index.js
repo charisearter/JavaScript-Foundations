@@ -3,9 +3,11 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
+ //principal = p , interest rate = int, years = years
 
-
-
+const p= 200000; //principal
+let int = 0.05; //interest rate
+let years = 30; //years
 
 
 // 🏡 Task 1.5: Simple Math
@@ -16,8 +18,11 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 Create another variable called `periods` and give it the value of years*12.
 */
 
+let monthlyInterestRate = int/12; //interest rate / 12 to give number of months amount
 
+let periods = years*12; // number of years in months
 
+console.log(p, int, years, monthlyInterestRate, periods);
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
