@@ -64,12 +64,12 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
     const numerator = i * Math.pow(1 + i, n);
     const denominator = Math.pow(1 + i, n) - 1;
     let monthlyRate = p * (numerator/denominator);
-    console.log (`${name}, your monthly rate is ${monthlyRate.toFixed(2)}.`)
+    return `${name}, your monthly rate is ${monthlyRate.toFixed(2)}.`;
  }
 
 
 
- mortgageCalculator();
+ console.log(mortgageCalculator()); //invoking function to check if it works
 
 
 
