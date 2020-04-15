@@ -3,10 +3,10 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
- //principal = p , interest rate = int, years = years
+ 
 
 const p= 200000; //principal
-let int = 0.05; //interest rate
+let intRate = 0.05; //interest rate
 let years = 30; //years
 
 
@@ -18,11 +18,11 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 Create another variable called `periods` and give it the value of years*12.
 */
 
-let monthlyInterestRate = int/12; //interest rate / 12 to give number of months amount
+let monthlyInterestRate = intRate/12; //interest rate / 12 to give number of months amount
 
-let periods = years*12; // number of years in months
+let n = years*12; // n= number of periods number of years in months 
 
-console.log(p, int, years, monthlyInterestRate, periods);
+let i = monthlyInterestRate;
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
@@ -35,6 +35,23 @@ When your math is correct, monthlyRate will equal 1073.64
 */
 
 
+// let a = 1 + i; // (1 + i )
+
+// let b =  Math.pow(a, n); //(1 + i )^n
+
+// let c = i * b; // i (1 + i )^ n === numerator
+
+// let d = b - 1; // (1 + i) ^ n - 1 === denominator
+
+//  const numerator = i * Math.pow(1 + i, n);//c;
+
+//  const denominator = Math.pow(1 + i, n) - 1;//d;
+
+// //let e = numerator/denominator; // [i (1+ i)^n] / [(1+ i)^n - 1]
+
+// let monthlyRate = p * (numerator/denominator); // P [i (1+ i)^n] / [(1+ i)^n - 1]
+
+//console.log(monthlyRate.toFixed(2));
 
 
 // 🏡 Task 3: Function
@@ -42,8 +59,17 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+ function mortgageCalculator() {
+    let name="Charise";
+    const numerator = i * Math.pow(1 + i, n);
+    const denominator = Math.pow(1 + i, n) - 1;
+    let monthlyRate = p * (numerator/denominator);
+    console.log (`${name}, your monthly rate is ${monthlyRate.toFixed(2)}.`)
+ }
 
 
+
+ mortgageCalculator();
 
 
 
