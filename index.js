@@ -108,17 +108,39 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-function mortgageCalculator(principal,i,number){
+
+
+// function mortgageCalculator(principal,i,number){
+//     let y = i/12;
+//     let z = number*12;
+//     let x = principal * (y * Math.pow((1 +y ),z)) / (Math.pow((1 + y),z) - 1);
+//     let m = x.toFixed(2);
+//     return m;
+    
+
+// } 
+//fix for loop
+function variableInterestRate (principal, i, number, creditScore){
     let y = i/12;
     let z = number*12;
+    if (creditScore < 660){
+        y = (i + 0.005)/12;
+    //console.log('below 660') quick check to see if this worked
+    }else if (creditScore > 740) {
+        y = (i - 0.005)/12;
+        //console.log('above 740') quick check to see if it worked
+    }
     let x = principal * (y * Math.pow((1 +y ),z)) / (Math.pow((1 + y),z) - 1);
     let m = x.toFixed(2);
-    return m;
+
+    for (let up = i; up <10; up++){
+        i = i +=0.005;
+    }
+    return `"${name}, your monthly rate is ${monthlyRate}"`;
 
 }
 
-console.log(mortgageCalculator(200000, 0.05, 30))
-
+console.log(variableInterestRate(200000,0.05,30, 640));
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
