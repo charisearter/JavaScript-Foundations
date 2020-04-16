@@ -47,7 +47,7 @@ function mortgageCalculator() {
 
 console.log (mortgageCalculator());
 
-// 🏡 Task 4: Arguments and Parameters
+// [x]🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
 For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
@@ -72,7 +72,25 @@ console.log(mortgageCalculator(200000, 0.05, 30));   //check and see why task 3 
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
+function mortgageCalculator(principal,i,number,creditScore){
+    let y = i/12;
+    let z = number*12;
+    if (creditScore < 660){
+        y = (i + 0.005)/12;
+    //console.log('below 660') quick check to see if this worked
+    }else if (creditScore > 740) {
+        y = (i - 0.005)/12;
+        //console.log('above 740') quick check to see if it worked
+    }
+    let x = principal * (y * Math.pow((1 +y ),z)) / (Math.pow((1 + y),z) - 1);
+    let m = x.toFixed(2);
+    return m;
 
+}
+
+console.log(mortgageCalculator(200000, 0.05, 30));
+console.log(mortgageCalculator(200000, 0.05, 30, 650));
+console.log(mortgageCalculator(200000, 0.05, 30, 800));
 
 
 
@@ -90,6 +108,16 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+function mortgageCalculator(principal,i,number){
+    let y = i/12;
+    let z = number*12;
+    let x = principal * (y * Math.pow((1 +y ),z)) / (Math.pow((1 + y),z) - 1);
+    let m = x.toFixed(2);
+    return m;
+
+}
+
+console.log(mortgageCalculator(200000, 0.05, 30))
 
 
 
