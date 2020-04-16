@@ -29,28 +29,23 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 [x]When your math is correct, monthlyRate will equal 1073.64
 */
 
-const a = Math.pow(1+I,N);
+const a = Math.pow(1+I,N); // math part of equation with exponent
 const numerator = I * a; //top of equation simplified
 const denominator = a - 1; //bottom of equation simplified
-
 let e = P * (numerator/denominator); // final equation simplified
-
 let monthlyRate = e.toFixed(2); // brought down to 2 decimal points.
 
 console.log(a, numerator, denominator, e, monthlyRate);
-
-
-
-
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+function mortgageCalculator() {
+    return `"${name}, your monthly rate is ${monthlyRate}"`;
+}
 
-
-
-
+console.log (mortgageCalculator());
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
@@ -58,6 +53,17 @@ For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
 
+
+function mortgageCalculator(principal,i,number){
+    let y = i/12;
+    let z = number*12;
+    let x = principal * (y * Math.pow((1 +y ),z)) / (Math.pow((1 + y),z) - 1);
+    let m = x.toFixed(2);
+    return m;
+
+}
+
+console.log(mortgageCalculator(200000, 0.05, 30));   //check and see why task 3 breaks returns NaN
 
 
 
