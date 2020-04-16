@@ -132,8 +132,15 @@ variableInterestRate(200000, 0.04, 30);
 // /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
 
 
-// /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
+// /* 🏡 Explor using `window.prompt()` to allow a user to input parameters in the browser */
 
+function Calculate(){
+    var P=parseInt(document.getElementById("txta").value);
+    var I=parseInt(document.getElementById("txtb").value);
+    var N=parseInt(document.getElementById("txtc").value);
+    var payments = P * ((I/12) * Math.pow((1 + (I/12) ),(N*12))) / (Math.pow((1 + (I/12)),(N*12)) - 1);
+    document.getElementById("txtd").value=""+payments.toFixed(2);
+}
 
 // /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
 

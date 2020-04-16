@@ -4,9 +4,56 @@
     <title>JavaScript Foundations</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <SCRIPT>
+       <script src="index.js"></script>
+  </SCRIPT>
   </head>
   <body>
     <p>Open up the console to check your work!</p>
+    <h2>Mortgage Calculator</h2>
+    <hr />
+    <table>
+        <tr>
+            <td>
+                <label>Principal:</label> 
+            </td>
+            <td>
+                <input type="text" name="txta" id="txta" placeholder="enter principal"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Interest:</label>
+            </td>
+            <td>
+                <input type="text" name="txtb" id="txtb" placeholder="enter interest rate"/>
+            </td>
+        </tr>
+        <tr>
+          <td>
+              <label>Years</label>
+          </td>
+          <td>
+              <input type="text" name="txtc" id="txtc" placeholder="enter years"/>
+          </td>
+      </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                <input type="button" value="Calculate" onclick="Calculate()" />
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <label>Payments</label>
+            </td>
+            <td>
+                <input type="text" name="txtd" id="txtd" readonly placeholder="monthly payments"/>
+            </td>
+        </tr>
+    </table>
     
       <script src="index.js"></script>
   </body>
