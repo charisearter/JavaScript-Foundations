@@ -34,7 +34,6 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 // const denominator = a - 1; //bottom of equation simplified
 // let e = P * (numerator/denominator); // final equation simplified
 let e = P * ((I/12) * Math.pow((1 + (I/12) ),(N*12))) / (Math.pow((1 + (I/12)),(N*12)) - 1);
-
 console.log(e);
 let monthlyRate = null;
 
@@ -110,42 +109,17 @@ console.log(mortgageCalculator2(200000, 0.05, 30, 800)); //high
 // "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 // */
 
-//Need help with For loop
-let count = 10;
-    for (let x = 0; x < count; x++){
+//Done Thank you!
 function variableInterestRate(P,I,N){
+    I -= 0.02;
+    for (let x = 0; x < 9; x++){
+
     let monthlyPayments = P * ((I/12) * Math.pow((1 + (I/12) ),(N*12))) / (Math.pow((1 + (I/12)),(N*12)) - 1);
-    return (`${name}, with an interest rate of ${I}, your monthly rate is ${monthlyPayments.toFixed(2)}`);
+    console.log (`${name}, with an interest rate of ${I.toFixed(3)}, your monthly rate is ${monthlyPayments.toFixed(2)}`);
+    I += 0.005;
 }
-I + 0.005;
-x++;
 }
-console.log(variableInterestRate(200000, 0.04, 30));
-    
-
-// // } 
-// //fix for loop
-// function variableInterestRate (principal, i, number, creditScore){
-//     let y = i/12;
-//     let z = number*12;
-//     if (creditScore < 660){
-//         y = (i + 0.005)/12;
-//     //console.log('below 660') quick check to see if this worked
-//     }else if (creditScore > 740) {
-//         y = (i - 0.005)/12;
-//         //console.log('above 740') quick check to see if it worked
-//     }
-//     let x = principal * (y * Math.pow((1 +y ),z)) / (Math.pow((1 + y),z) - 1);
-//     let m = x.toFixed(2);
-
-//     for (let up = i; up <10; up++){
-//         i = i +=0.005;
-//     }
-//     return `"${name}, your monthly rate is ${monthlyRate}"`;
-
-// }
-
-// console.log(variableInterestRate(200000,0.05,30, 640));
+variableInterestRate(200000, 0.04, 30);
 
 
 // // 🌟🌟🌟 STRETCH 🌟🌟🌟//
